@@ -22,10 +22,10 @@ w\:* {behavior:url(#default#VML);}
  <o:DocumentProperties>
   <o:Author>Rubén Bonet</o:Author>
   <o:LastAuthor>Rubén Bonet</o:LastAuthor>
-  <o:Revision>1</o:Revision>
-  <o:TotalTime>15</o:TotalTime>
-  <o:Created>2024-05-27T13:30:00Z</o:Created>
-  <o:LastSaved>2024-05-27T13:45:00Z</o:LastSaved>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>237</o:TotalTime>
+  <o:Created>2024-05-27T17:27:00Z</o:Created>
+  <o:LastSaved>2024-05-27T17:27:00Z</o:LastSaved>
   <o:Pages>1</o:Pages>
   <o:Words>72</o:Words>
   <o:Characters>398</o:Characters>
@@ -43,6 +43,7 @@ w\:* {behavior:url(#default#VML);}
 href="Phantom%20Web_archivos/colorschememapping.xml">
 <!--[if gte mso 9]><xml>
  <w:WordDocument>
+  <w:Zoom>130</w:Zoom>
   <w:DisplayBackgroundShape/>
   <w:SpellingState>Clean</w:SpellingState>
   <w:GrammarState>Clean</w:GrammarState>
@@ -696,7 +697,7 @@ href="Phantom%20Web_archivos/colorschememapping.xml">
 	mso-font-pitch:variable;
 	mso-font-signature:-1610611985 268435475 0 0 415 0;}
 @font-face
-	{font-family:"\Coolvetica Rg";
+	{font-family:"\@Yu Gothic";
 	panose-1:2 11 4 0 0 0 0 0 0 0;
 	mso-font-charset:128;
 	mso-generic-font-family:swiss;
@@ -717,7 +718,7 @@ href="Phantom%20Web_archivos/colorschememapping.xml">
 	font-family:"Aptos",sans-serif;
 	mso-ascii-font-family:Aptos;
 	mso-ascii-theme-font:minor-latin;
-	mso-fareast-font-family:"Coolvetica Rg";
+	mso-fareast-font-family:"Yu Gothic";
 	mso-fareast-theme-font:minor-fareast;
 	mso-hansi-font-family:Aptos;
 	mso-hansi-theme-font:minor-latin;
@@ -740,16 +741,16 @@ h1
 	page-break-after:avoid;
 	mso-outline-level:1;
 	font-size:20.0pt;
-	font-family:"Aptos Display",Coolvetica Rg;
+	font-family:"Aptos Display",sans-serif;
 	mso-ascii-font-family:"Aptos Display";
 	mso-ascii-theme-font:major-latin;
-	mso-fareast-font-family:"Coolvetica Rg";
+	mso-fareast-font-family:"Yu Gothic Light";
 	mso-fareast-theme-font:major-fareast;
 	mso-hansi-font-family:"Aptos Display";
 	mso-hansi-theme-font:major-latin;
 	mso-bidi-font-family:"Times New Roman";
 	mso-bidi-theme-font:major-bidi;
-	color:#f3f6f4;
+	color:#0F4761;
 	mso-themecolor:accent1;
 	mso-themeshade:191;
 	mso-font-kerning:1.0pt;
@@ -1600,8 +1601,8 @@ src="Phantom%20Web_archivos/image001.gif" v:shapes="Imagen_x0020_1"><![endif]></
 <p class=MsoNormal align=center style='text-align:center'><o:p>&nbsp;</o:p></p>
 
 <p class=MsoNormal align=center style='text-align:center'><span
-style='font-size:22.0pt;line-height:115%;font-family:"Coolvetica Rg",sans-serif'>ENTRA
-AL FIRMAMENTO<o:p></o:p></span></p>
+style='font-size:22.0pt;line-height:115%;font-family:"Coolvetica Rg",sans-serif;
+color:white;mso-themecolor:background1'>ENTRA AL FIRMAMENTO<o:p></o:p></span></p>
 
 <p class=MsoNormal align=center style='text-align:center'><span
 style='font-size:22.0pt;line-height:115%;font-family:"Coolvetica Rg",sans-serif;
@@ -1632,8 +1633,8 @@ style='font-size:16.0pt;line-height:115%;font-family:"Coolvetica Rg",sans-serif'
 style='font-size:16.0pt;line-height:115%;font-family:"Coolvetica Rg",sans-serif'><o:p>&nbsp;</o:p></span></p>
 
 <p class=MsoNormal align=center style='text-align:center'><span
-style='font-size:11.0pt;line-height:115%;font-family:"Coolvetica Rg",sans-serif'>REN
-BONET © 2024<o:p></o:p></span></p>
+style='font-size:11.0pt;line-height:115%;font-family:"Coolvetica Rg",sans-serif;
+color:white;mso-themecolor:background1'>REN BONET © 2024<o:p></o:p></span></p>
 
 </div>
 
