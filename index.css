@@ -1,11 +1,16 @@
-<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns="http://www.w3.org/TR/REC-html40"><head>
-<link rel="icon" type="image/x-icon" href="Test%20Web_archivos\r.ico">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<meta name="ProgId" content="Word.Document">
-<meta name="Generator" content="Microsoft Word 15">
-<meta name="Originator" content="Microsoft Word 15">
-<link rel="File-List" href="Test%20Web_archivos/filelist.xml">
-<link rel="Edit-Time-Data" href="Test%20Web_archivos/editdata.mso">
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="Phantom%20Web_archivos/filelist.xml">
+<link rel=Edit-Time-Data href="Phantom%20Web_archivos/editdata.mso">
 <!--[if !mso]>
 <style>
 v\:* {behavior:url(#default#VML);}
@@ -16,28 +21,29 @@ w\:* {behavior:url(#default#VML);}
 <![endif]--><!--[if gte mso 9]><xml>
  <o:DocumentProperties>
   <o:Author>Rubén Bonet</o:Author>
-  <o:Template>Normal</o:Template>
   <o:LastAuthor>Rubén Bonet</o:LastAuthor>
-  <o:Revision>2</o:Revision>
-  <o:TotalTime>47</o:TotalTime>
-  <o:Created>2024-05-15T09:45:00Z</o:Created>
-  <o:LastSaved>2024-05-15T09:45:00Z</o:LastSaved>
+  <o:Revision>1</o:Revision>
+  <o:TotalTime>15</o:TotalTime>
+  <o:Created>2024-05-27T13:30:00Z</o:Created>
+  <o:LastSaved>2024-05-27T13:45:00Z</o:LastSaved>
   <o:Pages>1</o:Pages>
-  <o:Words>61</o:Words>
-  <o:Characters>340</o:Characters>
-  <o:Lines>2</o:Lines>
+  <o:Words>72</o:Words>
+  <o:Characters>398</o:Characters>
+  <o:Lines>3</o:Lines>
   <o:Paragraphs>1</o:Paragraphs>
-  <o:CharactersWithSpaces>400</o:CharactersWithSpaces>
+  <o:CharactersWithSpaces>469</o:CharactersWithSpaces>
   <o:Version>16.00</o:Version>
  </o:DocumentProperties>
  <o:OfficeDocumentSettings>
   <o:AllowPNG/>
  </o:OfficeDocumentSettings>
 </xml><![endif]-->
-<link rel="themeData" href="Test%20Web_archivos/themedata.thmx">
-<link rel="colorSchemeMapping" href="Test%20Web_archivos/colorschememapping.xml">
+<link rel=themeData href="Phantom%20Web_archivos/themedata.thmx">
+<link rel=colorSchemeMapping
+href="Phantom%20Web_archivos/colorschememapping.xml">
 <!--[if gte mso 9]><xml>
  <w:WordDocument>
+  <w:DisplayBackgroundShape/>
   <w:SpellingState>Clean</w:SpellingState>
   <w:GrammarState>Clean</w:GrammarState>
   <w:TrackMoves>false</w:TrackMoves>
@@ -682,6 +688,14 @@ w\:* {behavior:url(#default#VML);}
 	mso-font-pitch:variable;
 	mso-font-signature:536871559 3 0 0 415 0;}
 @font-face
+	{font-family:"Coolvetica Rg";
+	panose-1:2 11 6 3 3 6 2 2 0 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610611985 268435475 0 0 415 0;}
+@font-face
 	{font-family:"\@Yu Gothic";
 	panose-1:2 11 4 0 0 0 0 0 0 0;
 	mso-font-charset:128;
@@ -735,7 +749,7 @@ h1
 	mso-hansi-theme-font:major-latin;
 	mso-bidi-font-family:"Times New Roman";
 	mso-bidi-theme-font:major-bidi;
-	color:black;
+	color:#0F4761;
 	mso-themecolor:accent1;
 	mso-themeshade:191;
 	mso-font-kerning:1.0pt;
@@ -765,7 +779,7 @@ h2
 	mso-hansi-theme-font:major-latin;
 	mso-bidi-font-family:"Times New Roman";
 	mso-bidi-theme-font:major-bidi;
-	color:black;
+	color:#0F4761;
 	mso-themecolor:accent1;
 	mso-themeshade:191;
 	mso-font-kerning:1.0pt;
@@ -795,7 +809,7 @@ h3
 	mso-hansi-theme-font:minor-latin;
 	mso-bidi-font-family:"Times New Roman";
 	mso-bidi-theme-font:major-bidi;
-	color:black;
+	color:#0F4761;
 	mso-themecolor:accent1;
 	mso-themeshade:191;
 	mso-font-kerning:1.0pt;
@@ -825,7 +839,7 @@ h4
 	mso-hansi-theme-font:minor-latin;
 	mso-bidi-font-family:"Times New Roman";
 	mso-bidi-theme-font:major-bidi;
-	color:black;
+	color:#0F4761;
 	mso-themecolor:accent1;
 	mso-themeshade:191;
 	mso-font-kerning:1.0pt;
@@ -856,7 +870,7 @@ h5
 	mso-hansi-theme-font:minor-latin;
 	mso-bidi-font-family:"Times New Roman";
 	mso-bidi-theme-font:major-bidi;
-	color:black;
+	color:#0F4761;
 	mso-themecolor:accent1;
 	mso-themeshade:191;
 	mso-font-kerning:1.0pt;
@@ -1100,19 +1114,6 @@ p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
 	letter-spacing:.75pt;
 	mso-font-kerning:1.0pt;
 	mso-ligatures:standardcontextual;}
-a:link, span.MsoHyperlink
-	{mso-style-priority:99;
-	color:#0C0C0C;
-	mso-themecolor:hyperlink;
-	text-decoration:underline;
-	text-underline:single;}
-a:visited, span.MsoHyperlinkFollowed
-	{mso-style-noshow:yes;
-	mso-style-priority:99;
-	color:#3F3F3F;
-	mso-themecolor:followedhyperlink;
-	text-decoration:underline;
-	text-underline:single;}
 p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
 	{mso-style-priority:34;
 	mso-style-unhide:no;
@@ -1251,10 +1252,10 @@ p.MsoIntenseQuote, li.MsoIntenseQuote, div.MsoIntenseQuote
 	line-height:115%;
 	mso-pagination:widow-orphan;
 	border:none;
-	mso-border-top-alt:solid black .5pt;
+	mso-border-top-alt:solid #0F4761 .5pt;
 	mso-border-top-themecolor:accent1;
 	mso-border-top-themeshade:191;
-	mso-border-bottom-alt:solid black .5pt;
+	mso-border-bottom-alt:solid #0F4761 .5pt;
 	mso-border-bottom-themecolor:accent1;
 	mso-border-bottom-themeshade:191;
 	padding:0cm;
@@ -1269,7 +1270,7 @@ p.MsoIntenseQuote, li.MsoIntenseQuote, div.MsoIntenseQuote
 	mso-hansi-theme-font:minor-latin;
 	mso-bidi-font-family:"Times New Roman";
 	mso-bidi-theme-font:minor-bidi;
-	color:black;
+	color:#0F4761;
 	mso-themecolor:accent1;
 	mso-themeshade:191;
 	mso-font-kerning:1.0pt;
@@ -1279,7 +1280,7 @@ span.MsoIntenseEmphasis
 	{mso-style-priority:21;
 	mso-style-unhide:no;
 	mso-style-qformat:yes;
-	color:black;
+	color:#0F4761;
 	mso-themecolor:accent1;
 	mso-themeshade:191;
 	font-style:italic;}
@@ -1288,7 +1289,7 @@ span.MsoIntenseReference
 	mso-style-unhide:no;
 	mso-style-qformat:yes;
 	font-variant:small-caps;
-	color:black;
+	color:#0F4761;
 	mso-themecolor:accent1;
 	mso-themeshade:191;
 	letter-spacing:.25pt;
@@ -1310,7 +1311,7 @@ span.Ttulo1Car
 	mso-hansi-theme-font:major-latin;
 	mso-bidi-font-family:"Times New Roman";
 	mso-bidi-theme-font:major-bidi;
-	color:black;
+	color:#0F4761;
 	mso-themecolor:accent1;
 	mso-themeshade:191;}
 span.Ttulo2Car
@@ -1331,7 +1332,7 @@ span.Ttulo2Car
 	mso-hansi-theme-font:major-latin;
 	mso-bidi-font-family:"Times New Roman";
 	mso-bidi-theme-font:major-bidi;
-	color:black;
+	color:#0F4761;
 	mso-themecolor:accent1;
 	mso-themeshade:191;}
 span.Ttulo3Car
@@ -1348,7 +1349,7 @@ span.Ttulo3Car
 	mso-fareast-theme-font:major-fareast;
 	mso-bidi-font-family:"Times New Roman";
 	mso-bidi-theme-font:major-bidi;
-	color:black;
+	color:#0F4761;
 	mso-themecolor:accent1;
 	mso-themeshade:191;}
 span.Ttulo4Car
@@ -1363,7 +1364,7 @@ span.Ttulo4Car
 	mso-fareast-theme-font:major-fareast;
 	mso-bidi-font-family:"Times New Roman";
 	mso-bidi-theme-font:major-bidi;
-	color:black;
+	color:#0F4761;
 	mso-themecolor:accent1;
 	mso-themeshade:191;
 	font-style:italic;}
@@ -1379,7 +1380,7 @@ span.Ttulo5Car
 	mso-fareast-theme-font:major-fareast;
 	mso-bidi-font-family:"Times New Roman";
 	mso-bidi-theme-font:major-bidi;
-	color:black;
+	color:#0F4761;
 	mso-themecolor:accent1;
 	mso-themeshade:191;}
 span.Ttulo6Car
@@ -1496,19 +1497,13 @@ span.CitadestacadaCar
 	mso-style-unhide:no;
 	mso-style-locked:yes;
 	mso-style-link:"Cita destacada";
-	color:black;
+	color:#0F4761;
 	mso-themecolor:accent1;
 	mso-themeshade:191;
 	font-style:italic;}
-span.SpellE
-	{mso-style-name:"";
-	mso-spl-e:yes;}
 .MsoChpDefault
 	{mso-style-type:export-only;
 	mso-default-props:yes;
-	font-size:12.0pt;
-	mso-ansi-font-size:12.0pt;
-	mso-bidi-font-size:12.0pt;
 	mso-ascii-font-family:Aptos;
 	mso-ascii-theme-font:minor-latin;
 	mso-fareast-font-family:"Yu Gothic";
@@ -1565,12 +1560,12 @@ div.WordSection1
  </o:shapelayout></xml><![endif]-->
 </head>
 
-<body lang="ES" link="#0C0C0C" vlink="#3F3F3F" style="tab-interval:35.4pt;
-word-wrap:break-word">
+<body bgcolor=black lang=ES style='tab-interval:35.4pt;word-wrap:break-word'>
 
-<div class="WordSection1">
+<div class=WordSection1>
 
-<p class="MsoNormal" align="center" style="text-align:center"><span style="mso-no-proof:yes"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+<p class=MsoNormal align=center style='text-align:center'><span
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
  coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
  filled="f" stroked="f">
  <v:stroke joinstyle="miter"/>
@@ -1590,163 +1585,58 @@ word-wrap:break-word">
  </v:formulas>
  <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
  <o:lock v:ext="edit" aspectratio="t"/>
-</v:shapetype><v:shape id="Imagen_x0020_1" o:spid="_x0000_i1025" type="#_x0000_t75"
- style='width:464.25pt;height:103.5pt;visibility:visible;mso-wrap-style:square'>
- <v:imagedata src="Test%20Web_archivos/image001.png" o:title=""/>
-</v:shape><![endif]--><!--[if !vml]-->
+</v:shapetype><v:shape id="Imagen_x0020_1" o:spid="_x0000_i1027" type="#_x0000_t75"
+ style='width:420pt;height:180.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Phantom%20Web_archivos/image001.gif" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=560 height=241
+src="Phantom%20Web_archivos/image001.gif" v:shapes="Imagen_x0020_1"><![endif]></span></p>
 
+<p class=MsoNormal align=center style='text-align:center'><o:p>&nbsp;</o:p></p>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rubén Bonet G.</title>
-<style>
-    body, html {
-        height: 50%;
-        margin: 0;
-        padding: 0;
-    }
+<p class=MsoNormal align=center style='text-align:center'><o:p>&nbsp;</o:p></p>
 
-    .contenedor {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        height: 100%;
-        perspective: 1000px; /* Perspectiva para efecto 3D */
-    }
+<p class=MsoNormal align=center style='text-align:center'><o:p>&nbsp;</o:p></p>
 
-    .imagen-rotatoria {
-        width: 150px; /* Ancho de la imagen */
-        height: 150px; /* Alto de la imagen */
-        position: relative;
-        transform-style: preserve-3d;
-        animation: rotar 15s linear infinite; /* Cambia el valor de 15s para ajustar la velocidad de rotación */
-    }
+<p class=MsoNormal align=center style='text-align:center'><o:p>&nbsp;</o:p></p>
 
-    .imagen-rotatoria img {
-        width: 100%;
-        height: 100%;
-    }
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:22.0pt;line-height:115%;font-family:"Coolvetica Rg",sans-serif'>ENTRA
+AL FIRMAMENTO<o:p></o:p></span></p>
 
-    @keyframes rotar {
-        0% {
-            transform: rotateY(0deg);
-        }
-        100% {
-            transform: rotateY(360deg);
-        }
-    }
-</style>
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:22.0pt;line-height:115%;font-family:"Coolvetica Rg",sans-serif;
+mso-no-proof:yes'>­</span><a
+href="https://www.amazon.es/Phantom-Chrysalide-Ren-Bonet-ebook/dp/B0CXYJ72MZ/ref=sr_1_1?crid=31VCJ4Z5YTE3R&amp;dib=eyJ2IjoiMSJ9.QNiKJWcJNzDN9icmfxifyCMihC2RwHz5jXauOZRdrIg7NcWJZ8121Gg9dWRIxnEChCRORvBu_Ki5goY-zQIQ_Zum6d6p1aLlOsq4YwV7vRih8bqq8Z2pidCGE5nGLCVnXxZxm9n6DclTZeo64_9hug.COGdPco7HB_hAxoS2RIWipyJGDEfQv-BaO4cfIl7XZk&amp;dib_tag=se&amp;keywords=phantom+chrysalide&amp;qid=1713957049&amp;sprefix=phantom+chry%2Caps%2C140&amp;sr=8-1"><span
+style='font-size:22.0pt;line-height:115%;font-family:"Coolvetica Rg",sans-serif;
+color:windowtext;mso-no-proof:yes;text-decoration:none;text-underline:none'><!--[if gte vml 1]><v:shape
+ id="Imagen_x0020_3" o:spid="_x0000_i1026" type="#_x0000_t75"
+ href="https://www.amazon.es/Phantom-Chrysalide-Ren-Bonet-ebook/dp/B0CXYJ72MZ/ref=sr_1_1?crid=31VCJ4Z5YTE3R&amp;dib=eyJ2IjoiMSJ9.QNiKJWcJNzDN9icmfxifyCMihC2RwHz5jXauOZRdrIg7NcWJZ8121Gg9dWRIxnEChCRORvBu_Ki5goY-zQIQ_Zum6d6p1aLlOsq4YwV7vRih8bqq8Z2pidCGE5nGLCVnXxZxm9n6DclTZeo64_9hug.COGdPco7HB_hAxoS2RIWipyJGDEfQv-BaO4cfIl7XZk&amp;dib_tag=se&amp;keywords=phantom+chrysalide&amp;qid=1713957049&amp;sprefix=phantom+chry%2Caps%2C140&amp;sr=8-1"
+ style='width:43.5pt;height:43.5pt;visibility:visible;mso-wrap-style:square'
+ o:button="t">
+ <v:imagedata src="Phantom%20Web_archivos/image002.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+border=0 width=58 height=58 src="Phantom%20Web_archivos/image003.png" v:shapes="Imagen_x0020_3"></span><![endif]></span></a><span
+style='font-size:22.0pt;line-height:115%;font-family:"Coolvetica Rg",sans-serif'><o:p></o:p></span></p>
 
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:16.0pt;line-height:115%;font-family:"Coolvetica Rg",sans-serif;
+mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Imagen_x0020_4" o:spid="_x0000_i1025"
+ type="#_x0000_t75" style='width:117pt;height:117pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="Phantom%20Web_archivos/image004.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=156 height=156
+src="Phantom%20Web_archivos/image004.png" v:shapes="Imagen_x0020_4"><![endif]></span><span
+style='font-size:16.0pt;line-height:115%;font-family:"Coolvetica Rg",sans-serif'><o:p></o:p></span></p>
 
-    </span></p><div class="contenedor">
-        <div class="imagen-rotatoria">
-            
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:16.0pt;line-height:115%;font-family:"Coolvetica Rg",sans-serif'><o:p>&nbsp;</o:p></span></p>
 
-
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Protección de Imagen</title>
-  <style>
-    /* Estilos para deshabilitar selección y arrastre de la imagen */
-    .protected-image {
-      user-drag: none;
-      user-select: none;
-      -webkit-user-drag: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-    }
-  </style>
-  <script>
-    // Deshabilitar el clic derecho en toda la página
-    document.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
-    }, false);
-  </script>
-
-
-  
-  <img src="Test%20Web_archivos/image010.png" alt="Imagen protegida" class="protected-image">
-
-
-
-        </div>
-    </div>
-
-
-<!--[endif]--><p></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:10.0pt;line-height:115%">RUBÉN BONET G. © 2024<o:p></o:p></span></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:14.0pt;line-height:115%"><a href="https://www.behance.net/rubnbonet"><span class="SpellE">Behance</span>.</a><o:p></o:p></span></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:14.0pt;line-height:115%"><a href="http://instagram.com/lovebloom.dot">Instagram.</a><o:p></o:p></span></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:14.0pt;line-height:115%"><a href="https://www.youtube.com/channel/UCjvk1Mq25RZlr0u9kWq1NdA"><span class="SpellE">Youtube</span>.</a><o:p></o:p></span></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:14.0pt;line-height:115%"><a href="https://open.spotify.com/show/5iMgr4YexWxNigshbfnQH7">Spotify.</a><o:p></o:p></span></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:14.0pt;line-height:115%"><a href="mailto:rubenbonet.design@outlook.com"><span class="SpellE">Contact</span>.</a><o:p></o:p></span></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:14.0pt;line-height:115%"><o:p>&nbsp;</o:p></span></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:14.0pt;line-height:115%"><o:p>&nbsp;</o:p></span></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><span class="SpellE"><b><span style="font-size:18.0pt;line-height:115%">Projects</span></b></span><b><span style="font-size:18.0pt;line-height:115%">.<o:p></o:p></span></b></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:18.0pt;line-height:115%"><o:p>&nbsp;</o:p></span></b></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:18.0pt;line-height:115%"><iframe src="https://www.behance.net/embed/project/199574459?ilo0=1" height="316" width="404" allowfullscreen="" lazyload="" frameborder="0" allow="clipboard-write" refererpolicy="strict-origin-when-cross-origin"></iframe>
-</span></b></p><p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:18.0pt;line-height:115%"><o:p>&nbsp;</o:p></span></b></p><p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:18.0pt;line-height:115%"><iframe src="https://www.behance.net/embed/project/146319537?ilo0=1" height="316" width="404" allowfullscreen="" lazyload="" frameborder="0" allow="clipboard-write" refererpolicy="strict-origin-when-cross-origin"></iframe></span></b></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:18.0pt;line-height:115%"><o:p>&nbsp;</o:p></span></b></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:18.0pt;line-height:115%"><iframe src="https://www.behance.net/embed/project/181154701?ilo0=1" height="316" width="404" allowfullscreen="" lazyload="" frameborder="0" allow="clipboard-write" refererpolicy="strict-origin-when-cross-origin"></iframe></span></b></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:18.0pt;line-height:115%"><o:p>&nbsp;</o:p></span></b></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:18.0pt;line-height:115%"><iframe src="https://www.behance.net/embed/project/164972837?ilo0=1" height="316" width="404" allowfullscreen="" lazyload="" frameborder="0" allow="clipboard-write" refererpolicy="strict-origin-when-cross-origin"></iframe></span></b></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:18.0pt;line-height:115%"><o:p>&nbsp;</o:p></span></b></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:18.0pt;line-height:115%"><iframe src="https://www.behance.net/embed/project/191977069?ilo0=1" height="316" width="404" allowfullscreen="" lazyload="" frameborder="0" allow="clipboard-write" refererpolicy="strict-origin-when-cross-origin"></iframe></span></b></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:18.0pt;line-height:115%"><o:p>&nbsp;</o:p></span></b></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:18.0pt;line-height:115%"><o:p>&nbsp;</o:p></span></b></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:18.0pt;line-height:115%"><o:p>&nbsp;</o:p></span></b></p>
-
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:18.0pt;line-height:115%"><o:p>&nbsp;</o:p></span></b></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:11.0pt;line-height:115%;font-family:"Coolvetica Rg",sans-serif'>REN
+BONET © 2024<o:p></o:p></span></p>
 
 </div>
 
+</body>
 
-
-
-  
-  <div class="image-container">
-    
-    
-  </div>
-
-
-
-
-
-
-</body></html>
+</html>
