@@ -1,423 +1,119 @@
-<html lang="es"><head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Phantom Chrysalide</title>
-    <link rel="icon" type="image/x-icon" href="Phantom%20Web_archivos/star.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&amp;display=swap" rel="stylesheet">
+    <title>Phantom Series</title>
     <style>
+        /* RESET SIMPLE */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
         }
-
+        
+        /* OCUPAR TODO SIN MÁRGENES */
         html, body {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: #000000;
-            font-family: 'Special Gothic Expanded One', sans-serif;
-            color: #ffffff;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            touch-action: none;
-        }
-
-        body {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            -webkit-text-size-adjust: 100%;
-            -moz-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
-            text-size-adjust: 100%;
-            opacity: 0;
-            animation: aparecer 2s ease-out forwards;
-        }
-
-        .contenedor-pantalla {
             width: 100vw;
             height: 100vh;
+            overflow: hidden;
+            background-color: #000000;
+        }
+        
+        /* CONTENEDOR CENTRADO */
+        .contenedor {
+            width: 100%;
+            height: 100%;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+        }
+        
+        /* FONDO - OCUPA TODO */
+        .fondo {
             position: fixed;
             top: 0;
             left: 0;
-            padding: 10px;
-        }
-
-        .texto-entrada {
-            font-family: 'Special Gothic Expanded One', sans-serif;
-            font-size: 8px;
-            text-align: center;
-            color: #ffffff;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            flex-shrink: 0;
-            height: auto;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            opacity: 0;
-            animation: desvanecer-entrada 1.5s ease-out 0.5s forwards;
-        }
-
-        .contenedor-gif {
-            flex: 1;
-            width: 100%;
-            max-width: 95vw;
-            height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 5px 0;
-            border: 5px solid #000000;
-            overflow: hidden;
-            flex-shrink: 0;
-            opacity: 0;
-            animation: desvanecer-gif 1.5s ease-out 1s forwards;
-        }
-
-        .gif-grande {
             width: 100%;
             height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        
+        /* IMAGEN PNG - ANIMACIÓN LIMPIA */
+        .imagen-principal {
+            position: relative;
+            z-index: 2;
+            max-width: 90%;
+            max-height: 80%;
             object-fit: contain;
-            image-rendering: crisp-edges;
-            pointer-events: none;
-            max-width: 100%;
-            max-height: 100%;
-        }
-
-        .estrella-contenedor {
-            flex-shrink: 0;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 10px 0;
-            position: relative;
+            
+            /* ANIMACIÓN SIMPLE: solo sube desde abajo */
             opacity: 0;
-            animation: desvanecer-estrella 1.5s ease-out 1.5s forwards;
+            transform: translateY(100px);
+            animation: subirSuave 2s ease-out forwards;
         }
-
-        .estrella-punto {
-            width: 80px;
-            height: 80px;
-            position: relative;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .punto-central {
-            width: 20px;
-            height: 20px;
-            background: #ffffff;
-            border-radius: 50%;
-            position: absolute;
-            z-index: 10;
-            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9));
-            animation: brillar 2s ease-in-out infinite alternate;
-            transition: all 0.3s ease;
-        }
-
-        .estrella-punto:hover .punto-central {
-            transform: scale(1.2);
-            filter: drop-shadow(0 0 25px rgba(255, 255, 255, 1));
-        }
-
-        .puntos-giratorios {
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-        }
-
-        .punto-giratorio {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: #ffffff;
-            border-radius: 50%;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            filter: blur(1px);
-            opacity: 0.8;
-        }
-
-        .punto-giratorio:nth-child(1) {
-            animation: orbitar 6s linear infinite;
-        }
-
-        .punto-giratorio:nth-child(2) {
-            animation: orbitar 5s linear infinite 3.10s;
-        }
-
-        .punto-giratorio:nth-child(3) {
-            animation: orbitar 5s linear infinite 2.20s;
-        }
-
-        .copyright {
-            font-family: 'Special Gothic Expanded One', sans-serif;
-            font-size: 8px;
-            text-align: center;
-            color: #ffffff;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            margin-top: 10px;
-            flex-shrink: 0;
-            height: auto;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-            opacity: 0;
-            animation: desvanecer-copyright 1.5s ease-out 2s forwards;
-        }
-
-        @keyframes aparecer {
+        
+        /* ANIMACIÓN SUPER SIMPLE - SOLO SUBIR */
+        @keyframes subirSuave {
             0% {
                 opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes desvanecer-entrada {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
+                transform: translateY(100px);
             }
             100% {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
-        @keyframes desvanecer-gif {
-            0% {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
+        
+        /* RESPONSIVE BÁSICO */
+        @media (max-width: 768px) {
+            .imagen-principal {
+                max-width: 95%;
+                max-height: 70%;
             }
         }
-
-        @keyframes desvanecer-estrella {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes desvanecer-copyright {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes brillar {
-            0%, 100% {
-                opacity: 0.8;
-                box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
-            }
-            50% {
-                opacity: 1;
-                box-shadow: 0 0 15px #ffffff, 0 0 30px #ffffff, 0 0 45px #ffffff;
-            }
-        }
-
-        @keyframes orbitar {
-            0% {
-                transform: translateX(-50%) rotate(0deg) translateY(-60px) rotate(0deg);
-            }
-            100% {
-                transform: translateX(-50%) rotate(360deg) translateY(-60px) rotate(-360deg);
-            }
-        }
-
-        @media (orientation: portrait) {
-            .contenedor-gif {
-                height: 65vh;
-                max-width: 98vw;
-            }
-            
-            .texto-entrada {
-                font-size: 8px;
-                margin-bottom: 8px;
-            }
-            
-            .estrella-punto {
-                width: 70px;
-                height: 70px;
-            }
-            
-            .punto-central {
-                width: 18px;
-                height: 18px;
-            }
-            
-            .puntos-giratorios {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .punto-giratorio {
-                width: 7px;
-                height: 7px;
-            }
-            
-            .copyright {
-                font-size: 8px;
-            }
-        }
-
-        @media (max-height: 600px) {
-            .contenedor-gif {
-                height: 55vh;
-            }
-            
-            .texto-entrada {
-                font-size: 8px;
-            }
-            
-            .estrella-punto {
-                width: 60px;
-                height: 60px;
-            }
-            
-            .punto-central {
-                width: 16px;
-                height: 16px;
-            }
-            
-            .puntos-giratorios {
-                width: 90px;
-                height: 90px;
-            }
-            
-            .punto-giratorio {
-                width: 6px;
-                height: 6px;
-            }
-            
-            .copyright {
-                font-size: 8px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .contenedor-pantalla {
-                padding: 5px;
-            }
-            
-            .contenedor-gif {
-                height: 60vh;
-                border-width: 3px;
-                margin: 3px 0;
-            }
-            
-            .texto-entrada {
-                font-size: 8px;
-                margin-bottom: 5px;
-            }
-            
-            .estrella-punto {
-                width: 50px;
-                height: 50px;
-            }
-            
-            .punto-central {
-                width: 14px;
-                height: 14px;
-            }
-            
-            .puntos-giratorios {
-                width: 80px;
-                height: 80px;
-            }
-            
-            .punto-giratorio {
-                width: 5px;
-                height: 5px;
-            }
-            
-            .copyright {
-                font-size: 9px;
-            }
-        }
-
-        @media (min-width: 1200px) and (min-height: 800px) {
-            .contenedor-gif {
-                height: 70vh;
-                max-width: 90vw;
-            }
-            
-            .texto-entrada {
-                font-size: 18px;
-            }
-            
-            .estrella-punto {
-                width: 90px;
-                height: 90px;
-            }
-            
-            .punto-central {
-                width: 22px;
-                height: 22px;
-            }
-            
-            .puntos-giratorios {
-                width: 140px;
-                height: 140px;
-            }
-            
-            .punto-giratorio {
-                width: 9px;
-                height: 9px;
-            }
-            
-            .copyright {
-                font-size: 14px;
+        
+        @media (min-width: 1200px) {
+            .imagen-principal {
+                max-width: 80%;
+                max-height: 85%;
             }
         }
     </style>
+</head>
+<body>
+    <div class="contenedor">
+        <!-- FONDO -->
+        <img src="Phantom%20Web_archivos/imagen-fondo-serie.jpg" 
+             alt="Fondo Phantom" 
+             class="fondo">
+        
+        <!-- IMAGEN PNG - SUBE DESDE ABAJO -->
+        <img src="Phantom%20Web_archivos/Imagen-1-de-la-serie-phantom.png" 
+             alt="Phantom Serie 1" 
+             class="imagen-principal">
+    </div>
+
     <script>
+        // BLOQUEAR CLIC DERECHO SIMPLE
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
-        }, false);
+        });
         
+        // BLOQUEAR ZOOM CON TECLADO
         document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && (e.key === '+' || e.key === '-' || e.key === '=' || e.keyCode === 187 || e.keyCode === 189)) {
+            if (e.ctrlKey && (e.key === '+' || e.key === '-' || e.key === '=')) {
                 e.preventDefault();
             }
         });
         
+        // BLOQUEAR ZOOM TÁCTIL
         document.addEventListener('gesturestart', function(e) {
             e.preventDefault();
         });
         
+        // BLOQUEAR DOUBLE-TAP ZOOM EN MÓVILES
         let lastTouchEnd = 0;
         document.addEventListener('touchend', function(e) {
             const now = Date.now();
@@ -427,53 +123,10 @@
             lastTouchEnd = now;
         }, false);
         
-        function mantenerGifAnimado() {
-            const gif = document.querySelector('.gif-grande');
-            if (gif && gif.src) {
-                const gifSrc = gif.src.split('?')[0];
-                
-                function reiniciarGif() {
-                    if (gif.complete) {
-                        gif.src = gifSrc + '?t=' + Date.now();
-                    }
-                }
-                
-                if (gifSrc.toLowerCase().endsWith('.gif')) {
-                    setInterval(reiniciarGif, 3000);
-                }
-            }
-        }
-        
-        function crearPuntosGiratorios() {
-            const contenedor = document.querySelector('.puntos-giratorios');
-            if (contenedor && contenedor.children.length === 0) {
-                for (let i = 0; i < 3; i++) {
-                    const punto = document.createElement('div');
-                    punto.className = 'punto-giratorio';
-                    contenedor.appendChild(punto);
-                }
-            }
-        }
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            mantenerGifAnimado();
-            crearPuntosGiratorios();
+        // CONFIRMAR CARGA
+        window.addEventListener('load', function() {
+            console.log('✅ Página cargada - Imagen subiendo desde abajo');
         });
     </script>
-</head>
-<body>
-    <div class="contenedor-pantalla">
-        <div class="contenedor-gif">
-            <img src="https://phantomchrysalide.github.io/Phantom%20Web_archivos/PHANTOM-1.gif?t=1767128586737" alt="Phantom Chrysalide" class="gif-grande">
-        </div>
-        <div class="estrella-contenedor">
-            <a href="https://www.amazon.es/Phantom-Chrysalide-Ren-Bonet-ebook/dp/B0CXYJ72MZ" class="estrella-punto" target="_blank" style="text-decoration: none;">
-                <div class="punto-central"></div>
-                <div class="puntos-giratorios">
-                <div class="punto-giratorio"></div><div class="punto-giratorio"></div></div>
-            </a>
-            <div class="copyright">REN BONET © 2026</div>
-        </div>
-    </div>
-
-</body></html>
+</body>
+</html>
