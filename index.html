@@ -15,9 +15,7 @@
             -ms-user-select: none;
             user-select: none;
             -webkit-user-drag: none;
-            -khtml-user-drag: none;
             -moz-user-drag: none;
-            -o-user-drag: none;
             user-drag: none;
             -webkit-touch-callout: none;
         }
@@ -33,16 +31,6 @@
             touch-action: none;
         }
         
-        .proteccion-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            background: transparent;
-        }
-        
         .contenedor {
             width: 100%;
             height: 100%;
@@ -50,6 +38,7 @@
             justify-content: center;
             align-items: center;
             position: relative;
+            cursor: pointer;
         }
         
         .fondo {
@@ -60,8 +49,6 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            -webkit-user-drag: none;
-            user-drag: none;
             pointer-events: none;
         }
         
@@ -71,26 +58,21 @@
             max-width: 90%;
             max-height: 80%;
             object-fit: contain;
-            
             opacity: 0;
             transform: translateY(100px);
             animation: subirSuave 2s ease-out forwards;
-            
-            -webkit-user-drag: none;
-            user-drag: none;
-            pointer-events: none;
-            
-            /* Añadir transición para cambio suave */
+            pointer-events: auto;
             transition: opacity 0.5s ease;
         }
         
         .canvas-container {
-            position: relative;
+            position: absolute;
             z-index: 2;
             max-width: 90%;
             max-height: 80%;
+            width: auto;
+            height: auto;
             display: none;
-            object-fit: contain;
         }
         
         .canvas-protegido {
@@ -98,8 +80,8 @@
             max-height: 100%;
             width: auto;
             height: auto;
-            object-fit: contain;
             display: block;
+            opacity: 1;
         }
         
         @keyframes subirSuave {
@@ -115,7 +97,7 @@
         
         @media (max-width: 768px) {
             .imagen-principal,
-            .canvas-protegido {
+            .canvas-container {
                 max-width: 95%;
                 max-height: 70%;
             }
@@ -123,7 +105,7 @@
         
         @media (min-width: 1200px) {
             .imagen-principal,
-            .canvas-protegido {
+            .canvas-container {
                 max-width: 80%;
                 max-height: 85%;
             }
@@ -131,268 +113,139 @@
     </style>
 </head>
 <body>
-    <div class="proteccion-overlay" id="proteccionOverlay"></div>
-    
-    <div class="contenedor">
+    <div class="contenedor" id="contenedor">
         <img src="Phantom%20Web_archivos/imagen-fondo-serie.jpg" alt="Fondo Phantom" class="fondo" id="fondoImg">
-        
         <img src="Phantom%20Web_archivos/Imagen-1-de-la-serie-phantom.png" alt="Phantom Serie 1" class="imagen-principal" id="imagenPrincipal">
-        
         <div class="canvas-container" id="canvasContainer"></div>
     </div>
 
     <script>
+        // Variable para controlar si ya se convirtió a canvas
+        let canvasConvertido = false;
         
-        function activarProteccionTotal() {
-            console.log('🔒 Activando protección total...');
+        // Función para proteger la imagen convirtiéndola a canvas
+        function convertirImagenACanvas() {
+            if (canvasConvertido) return;
             
+            const imagenPrincipal = document.getElementById('imagenPrincipal');
+            const canvasContainer = document.getElementById('canvasContainer');
+            
+            if (!imagenPrincipal.complete) {
+                setTimeout(convertirImagenACanvas, 100);
+                return;
+            }
+            
+            // Crear canvas
+            const canvas = document.createElement('canvas');
+            canvas.className = 'canvas-protegido';
+            
+            // Obtener dimensiones actuales de la imagen visible
+            const displayRect = imagenPrincipal.getBoundingClientRect();
+            
+            // Crear canvas con las mismas dimensiones visibles
+            canvas.width = displayRect.width;
+            canvas.height = displayRect.height;
+            
+            const ctx = canvas.getContext('2d');
+            
+            // Configurar calidad
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
+            
+            // Dibujar la imagen escalada al tamaño del canvas
+            ctx.drawImage(imagenPrincipal, 0, 0, displayRect.width, displayRect.height);
+            
+            // Ocultar imagen original y mostrar canvas
+            imagenPrincipal.style.opacity = '0';
+            
+            setTimeout(() => {
+                canvasContainer.appendChild(canvas);
+                canvasContainer.style.display = 'block';
+                imagenPrincipal.style.display = 'none';
+                canvasConvertido = true;
+                
+                console.log('✅ Imagen protegida en canvas');
+            }, 500);
+        }
+        
+        // Función para abrir enlace al hacer clic
+        function configurarClic() {
+            const contenedor = document.getElementById('contenedor');
+            
+            contenedor.addEventListener('click', function() {
+                console.log('🌍 Abriendo enlace de Amazon...');
+                window.open('https://www.amazon.es/dp/B0CY97WQ2L?binding=kindle_edition&ref=dbs_dp_rwt_sb_pc_tkin', '_blank');
+            });
+        }
+        
+        // Protección básica
+        function activarProteccion() {
+            // Prevenir clic derecho
             document.addEventListener('contextmenu', function(e) {
                 e.preventDefault();
-                mostrarMensajeProteccion();
                 return false;
             });
             
-            
+            // Prevenir arrastrar imágenes
             document.addEventListener('dragstart', function(e) {
-                if (e.target.tagName === 'IMG') {
+                if (e.target.tagName === 'IMG' || e.target.tagName === 'CANVAS') {
                     e.preventDefault();
-                    mostrarMensajeProteccion();
                     return false;
                 }
             });
             
-         
+            // Prevenir atajos de teclado comunes
             document.addEventListener('keydown', function(e) {
-            
-                if (e.ctrlKey && e.key === 's') {
+                // Prevenir F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+                if (e.key === 'F12' || 
+                    (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+                    (e.ctrlKey && e.key === 'u')) {
                     e.preventDefault();
-                    mostrarMensajeProteccion();
                     return false;
                 }
-             
-                if (e.ctrlKey && e.key === 'c') {
-                    e.preventDefault();
-                    mostrarMensajeProteccion();
-                    return false;
-                }
-          
-                if (e.ctrlKey && e.key === 'p') {
-                    e.preventDefault();
-                    mostrarMensajeProteccion();
-                    return false;
-                }
-              
+                
+                // Prevenir capturas de pantalla
                 if (e.key === 'PrintScreen') {
                     e.preventDefault();
-                    mostrarMensajeProteccion();
                     return false;
                 }
+            });
             
-                if (e.key === 'F12') {
+            // Prevenir zoom con Ctrl+rueda
+            document.addEventListener('wheel', function(e) {
+                if (e.ctrlKey) {
                     e.preventDefault();
-                    mostrarMensajeProteccion();
-                    return false;
                 }
-            });
+            }, { passive: false });
             
-           
-            document.addEventListener('selectstart', function(e) {
+            // Prevenir zoom táctil
+            document.addEventListener('gesturestart', function(e) {
                 e.preventDefault();
-                return false;
             });
-            
-          
-            document.addEventListener('copy', function(e) {
-                e.preventDefault();
-                mostrarMensajeProteccion();
-                return false;
-            });
-            
-            function convertirImagenACanvas() {
-                const imagenPrincipal = document.getElementById('imagenPrincipal');
-                const canvasContainer = document.getElementById('canvasContainer');
-                
-                if (imagenPrincipal.complete && !canvasContainer.hasChildNodes()) {
-                    console.log('🔄 Convirtiendo imagen a canvas...');
-                    
-                    // Obtener las dimensiones VISIBLES de la imagen
-                    const displayWidth = imagenPrincipal.clientWidth;
-                    const displayHeight = imagenPrincipal.clientHeight;
-                    const displayStyle = window.getComputedStyle(imagenPrincipal);
-                    
-                    // Crear canvas
-                    const canvas = document.createElement('canvas');
-                    canvas.className = 'canvas-protegido';
-                    
-                    // IMPORTANTE: Usar las mismas dimensiones que la imagen visible
-                    canvas.width = displayWidth;
-                    canvas.height = displayHeight;
-                    
-                    const ctx = canvas.getContext('2d');
-                    
-                    // Configurar el contexto para mantener calidad
-                    ctx.imageSmoothingEnabled = true;
-                    ctx.imageSmoothingQuality = 'high';
-                    
-                    // Dibujar la imagen en el canvas con las dimensiones correctas
-                    ctx.drawImage(imagenPrincipal, 0, 0, displayWidth, displayHeight);
-                    
-                    // Aplicar estilos similares a la imagen original
-                    canvas.style.opacity = '1';
-                    canvas.style.transform = 'translateY(0)';
-                    
-                    // Primero hacer fade out de la imagen
-                    imagenPrincipal.style.opacity = '0';
-                    
-                    // Esperar a que termine el fade out, luego mostrar el canvas
-                    setTimeout(() => {
-                        canvasContainer.appendChild(canvas);
-                        canvasContainer.style.display = 'block';
-                        imagenPrincipal.style.display = 'none';
-                        
-                        console.log('✅ Imagen convertida a canvas (protegida)');
-                        console.log(`Dimensiones canvas: ${canvas.width}x${canvas.height}`);
-                        console.log(`Dimensiones originales imagen: ${imagenPrincipal.naturalWidth}x${imagenPrincipal.naturalHeight}`);
-                    }, 500);
-                } else {
-                    // Si no está lista, reintentar en 100ms
-                    setTimeout(convertirImagenACanvas, 100);
-                }
-            }
-            
-           
-            window.addEventListener('load', function() {
-                // Esperar un poco más para asegurar que todo esté cargado
-                setTimeout(() => {
-                    // Esperar a que termine la animación de entrada
-                    setTimeout(convertirImagenACanvas, 2000);
-                }, 500);
-            });
-            
-            // Si la imagen ya está cargada cuando se ejecuta el script
-            if (document.getElementById('imagenPrincipal').complete) {
-                setTimeout(convertirImagenACanvas, 2500);
-            } else {
-                // Si no está cargada, esperar a que cargue
-                document.getElementById('imagenPrincipal').addEventListener('load', function() {
-                    setTimeout(convertirImagenACanvas, 2500);
-                });
-            }
-         
-            function detectarDevTools() {
-                const threshold = 160;
-                const widthThreshold = window.outerWidth - window.innerWidth > threshold;
-                const heightThreshold = window.outerHeight - window.innerHeight > threshold;
-                
-                if (widthThreshold || heightThreshold) {
-                    document.body.innerHTML = `
-                        <div style="
-                            position: fixed;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            background: black;
-                            color: red;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            font-family: Arial;
-                            text-align: center;
-                            z-index: 10000;
-                        ">
-                            <div>
-                                <h1>⚠️ ACCESO BLOQUEADO</h1>
-                                <p>No se permiten herramientas de desarrollo</p>
-                                <p>Esta página contiene contenido protegido</p>
-                            </div>
-                        </div>
-                    `;
-                }
-            }
-            
-            setInterval(detectarDevTools, 1000);
-            
-            console.log('✅ Protección total activada');
         }
         
-        function mostrarMensajeProteccion() {
-            const mensaje = document.createElement('div');
-            mensaje.textContent = '⚠️ Contenido protegido';
-            mensaje.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: rgba(255, 0, 0, 0.9);
-                color: white;
-                padding: 10px 15px;
-                font-family: Arial, sans-serif;
-                font-size: 14px;
-                border-radius: 5px;
-                z-index: 10000;
-                animation: fadeProtection 1.5s forwards;
-                pointer-events: none;
-            `;
-            
-       
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes fadeProtection {
-                    0% { opacity: 0; transform: translateX(50px); }
-                    20% { opacity: 1; transform: translateX(0); }
-                    80% { opacity: 1; transform: translateX(0); }
-                    100% { opacity: 0; transform: translateX(50px); }
-                }
-            `;
-            document.head.appendChild(style);
-            
-            document.body.appendChild(mensaje);
-            setTimeout(() => {
-                if (mensaje.parentNode) {
-                    mensaje.parentNode.removeChild(mensaje);
-                }
-            }, 1500);
-        }
-        
- 
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && (e.key === '+' || e.key === '-' || e.key === '=')) {
-                e.preventDefault();
-            }
-        });
-        
-        document.addEventListener('gesturestart', function(e) {
-            e.preventDefault();
-        });
-        
-        let lastTouchEnd = 0;
-        document.addEventListener('touchend', function(e) {
-            const now = Date.now();
-            if (now - lastTouchEnd <= 300) {
-                e.preventDefault();
-            }
-            lastTouchEnd = now;
-        }, false);
-        
- 
-        document.addEventListener('DOMContentLoaded', function() {
+        // Inicializar todo cuando cargue la página
+        window.addEventListener('load', function() {
             console.log('🎬 Serie Phantom - Cargando...');
             
-            // Asegurar que el contenedor tenga el tamaño correcto
-            document.documentElement.style.width = '100vw';
-            document.documentElement.style.height = '100vh';
-            document.body.style.overflow = 'hidden';
+            // Activar protección básica
+            activarProteccion();
             
-            // Activar protección
-            activarProteccionTotal();
+            // Configurar clic para abrir enlace
+            configurarClic();
             
-            console.log('✅ Página cargada - Imagen protegida');
+            // Convertir imagen a canvas después de la animación
+            setTimeout(() => {
+                convertirImagenACanvas();
+            }, 2000);
+            
+            console.log('✅ Página lista');
         });
         
-       
-        document.addEventListener('wheel', function(e) {
-            if (e.ctrlKey) e.preventDefault();
-        }, { passive: false });
+        // Si la imagen ya está cargada
+        document.getElementById('imagenPrincipal').addEventListener('load', function() {
+            console.log('🖼️ Imagen principal cargada');
+        });
     </script>
 </body>
 </html>
